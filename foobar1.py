@@ -55,9 +55,9 @@
 # answer. If your solution passes the test cases, it will be removed from your home folder.
 
 def solution(data, n): 
-    counts = dict.fromkeys(data, 0)
+    counts = {}
     for id in data:
-        counts[id] += 1
+        counts[id] = counts.get(id, 0) + 1
     return filter(lambda id: counts[id] <= n, data)
 
 
